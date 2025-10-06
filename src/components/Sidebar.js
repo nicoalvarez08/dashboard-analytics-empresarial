@@ -19,13 +19,14 @@ const SidebarContainer = styled.aside`
   width: ${props => props.isOpen ? '280px' : '80px'};
   background: ${props => props.theme.colors.surface};
   border-right: 1px solid ${props => props.theme.colors.border};
-  transition: width ${props => props.theme.transitions.normal};
+  transition: all ${props => props.theme.transitions.normal};
   z-index: 1000;
   overflow: hidden;
 
   @media (max-width: 768px) {
     transform: translateX(${props => props.isOpen ? '0' : '-100%'});
     width: 280px;
+    box-shadow: ${props => props.isOpen ? '2px 0 10px rgba(0,0,0,0.1)' : 'none'};
   }
 `;
 
@@ -72,6 +73,21 @@ const ToggleButton = styled.button`
 
   @media (max-width: 768px) {
     display: none;
+  }
+`;
+
+const MobileOverlay = styled.div`
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  
+  @media (max-width: 768px) {
+    display: ${props => props.isOpen ? 'block' : 'none'};
   }
 `;
 
@@ -148,31 +164,38 @@ const Sidebar = ({ isOpen, onToggle }) => {
     { path: '/profile', icon: FiSettings, label: 'Perfil' }
   ];
 
+  const handleOverlayClick = () => {
+    onToggle();
+  };
+
   return (
-    <SidebarContainer isOpen={isOpen}>
-      <SidebarHeader>
-        <Logo isOpen={isOpen}>
-          <FiBarChart2 />
-          {isOpen && 'Analytics Pro'}
-        </Logo>
-        <ToggleButton onClick={onToggle}>
-          <FiMenu />
-        </ToggleButton>
-      </SidebarHeader>
-      
-      <Nav>
-        <NavList>
-          {navItems.map((item) => (
-            <NavItem key={item.path}>
-              <NavLinkStyled to={item.path} isOpen={isOpen}>
-                <item.icon />
-                <span>{item.label}</span>
-              </NavLinkStyled>
-            </NavItem>
-          ))}
-        </NavList>
-      </Nav>
-    </SidebarContainer>
+    <>
+      <MobileOverlay isOpen={isOpen} onClick={handleOverlayClick} />
+      <SidebarContainer isOpen={isOpen}>
+        <SidebarHeader>
+          <Logo isOpen={isOpen}>
+            <FiBarChart2 />
+            {isOpen && 'Analytics Pro'}
+          </Logo>
+          <ToggleButton onClick={onToggle}>
+            <FiMenu />
+          </ToggleButton>
+        </SidebarHeader>
+        
+        <Nav>
+          <NavList>
+            {navItems.map((item) => (
+              <NavItem key={item.path}>
+                <NavLinkStyled to={item.path} isOpen={isOpen} onClick={() => window.innerWidth <= 768 && onToggle()}>
+                  <item.icon />
+                  <span>{item.label}</span>
+                </NavLinkStyled>
+              </NavItem>
+            ))}
+          </NavList>
+        </Nav>
+      </SidebarContainer>
+    </>
   );
 };
 
