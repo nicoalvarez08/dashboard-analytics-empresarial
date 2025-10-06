@@ -8,6 +8,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Analytics from './pages/Analytics';
+import Reports from './pages/Reports';
+import Activity from './pages/Activity';
 import AdminPanel from './pages/AdminPanel';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
@@ -33,6 +36,9 @@ function App() {
                 }>
                   <Route index element={<Navigate to="/dashboard" replace />} />
                   <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="dashboard/analytics" element={<Analytics />} />
+                  <Route path="dashboard/reports" element={<Reports />} />
+                  <Route path="dashboard/activity" element={<Activity />} />
                   <Route path="admin" element={<AdminPanel />} />
                   <Route path="profile" element={<Profile />} />
                 </Route>

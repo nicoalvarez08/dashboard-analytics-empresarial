@@ -8,7 +8,16 @@ import {
   FiPlus,
   FiEdit,
   FiTrash2,
-  FiSearch
+  FiSearch,
+  FiShield,
+  FiDatabase,
+  FiServer,
+  FiActivity,
+  FiDollarSign,
+  FiTrendingUp,
+  FiAlertCircle,
+  FiCheckCircle,
+  FiClock
 } from 'react-icons/fi';
 import { Card, Button, Input, LoadingSpinner } from '../styles/GlobalStyle';
 import axios from 'axios';
