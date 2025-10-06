@@ -131,10 +131,11 @@ export const DashboardProvider = ({ children }) => {
     try {
       dispatch({ type: 'SET_LOADING', payload: { key: 'overview', value: true } });
       
-      const response = await axios.get('/dashboard/overview');
+      // Usar datos mock directamente para evitar rate limiting
+      console.log('Usando datos de ejemplo para overview');
       dispatch({
         type: 'SET_OVERVIEW',
-        payload: response.data
+        payload: mockOverview
       });
     } catch (error) {
       console.log('Usando datos de ejemplo para overview');
@@ -152,14 +153,13 @@ export const DashboardProvider = ({ children }) => {
         payload: { key: 'charts', value: { [metric]: true } } 
       });
       
-      const params = new URLSearchParams(options);
-      const response = await axios.get(`/dashboard/charts/${metric}?${params}`);
-      
+      // Usar datos mock directamente para evitar rate limiting
+      console.log(`Usando datos de ejemplo para ${metric}`);
       dispatch({
         type: 'SET_CHART_DATA',
         payload: {
           metric,
-          data: response.data
+          data: mockChartData[metric] || mockChartData.sales
         }
       });
     } catch (error) {
@@ -178,10 +178,11 @@ export const DashboardProvider = ({ children }) => {
     try {
       dispatch({ type: 'SET_LOADING', payload: { key: 'realtime', value: true } });
       
-      const response = await axios.get('/dashboard/realtime');
+      // Usar datos mock directamente para evitar rate limiting
+      console.log('Usando datos de ejemplo para tiempo real');
       dispatch({
         type: 'SET_REALTIME_DATA',
-        payload: response.data.data
+        payload: mockRealtimeData
       });
     } catch (error) {
       console.log('Usando datos de ejemplo para tiempo real');

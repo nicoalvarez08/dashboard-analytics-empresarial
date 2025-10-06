@@ -26,7 +26,7 @@ const PageHeader = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Title = styled.h1`
+const ActivityTitle = styled.h1`
   font-size: 2rem;
   font-weight: 700;
   color: ${props => props.theme.colors.text};
@@ -289,7 +289,7 @@ const Activity = () => {
   return (
     <ActivityContainer>
       <PageHeader>
-        <Title>Actividad del Sistema</Title>
+        <ActivityTitle>Actividad del Sistema</ActivityTitle>
         <HeaderActions>
           <ActionButton>
             <FiFilter />

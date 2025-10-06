@@ -51,7 +51,7 @@ const PageHeader = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Title = styled.h1`
+const AnalyticsTitle = styled.h1`
   font-size: 2rem;
   font-weight: 700;
   color: ${props => props.theme.colors.text};
@@ -264,7 +264,7 @@ const Analytics = () => {
   return (
     <AnalyticsContainer>
       <PageHeader>
-        <Title>Analytics Avanzado</Title>
+        <AnalyticsTitle>Analytics Avanzado</AnalyticsTitle>
         <HeaderActions>
           <ActionButton>
             <FiFilter />
