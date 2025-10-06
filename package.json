@@ -1,38 +1,20 @@
 {
   "name": "dashboard-analytics-empresarial",
   "version": "1.0.0",
-  "description": "Dashboard profesional de analytics empresarial - Proyecto para portfolio",
-  "main": "index.js",
+  "description": "Dashboard de Analytics Empresarial - Proyecto profesional",
   "scripts": {
-    "build": "cd client && npm run build",
-    "start": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm run dev",
     "client": "cd client && npm start",
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-    "postinstall": "npm run install-all"
+    "build": "cd client && npm run build",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client"
   },
-  "keywords": [
-    "dashboard",
-    "analytics",
-    "react",
-    "nodejs",
-    "mongodb",
-    "portfolio",
-    "fullstack"
-  ],
+  "keywords": ["dashboard", "analytics", "react", "nodejs", "mongodb"],
   "author": "Nico Alvarez",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nicoalvarez08/dashboard-analytics-empresarial.git"
-  },
-  "homepage": "https://dashboard-analytics-nicoalvarez08.netlify.app/"
+  }
 }
