@@ -139,7 +139,7 @@ const ActivityContent = styled.div`
   flex: 1;
 `;
 
-const ActivityTitle = styled.div`
+const ActivityItemTitle = styled.div`
   font-weight: 600;
   color: ${props => props.theme.colors.text};
   margin-bottom: 0.25rem;
@@ -316,7 +316,7 @@ const Activity = () => {
                   <activity.icon />
                 </ActivityIcon>
                 <ActivityContent>
-                  <ActivityTitle>{activity.title}</ActivityTitle>
+                  <ActivityItemTitle>{activity.title}</ActivityItemTitle>
                   <ActivityDescription>{activity.description}</ActivityDescription>
                   <ActivityTime>{activity.time}</ActivityTime>
                 </ActivityContent>
