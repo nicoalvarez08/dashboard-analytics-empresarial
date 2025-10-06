@@ -1,0 +1,45 @@
+[build]
+  # Directorio donde está el cliente React
+  base = "client"
+  publish = "client/build"
+  command = "npm run build"
+
+[build.environment]
+  # Variables de entorno para producción
+  NODE_VERSION = "18"
+  REACT_APP_API_URL = "https://dashboard-analytics-backend.herokuapp.com/api"
+  REACT_APP_SOCKET_URL = "https://dashboard-analytics-backend.herokuapp.com"
+  GENERATE_SOURCEMAP = "false"
+
+# Configuración de redirecciones para SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://dashboard-analytics-backend.herokuapp.com wss://dashboard-analytics-backend.herokuapp.com;"
+
+# Headers para archivos estáticos
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Headers para archivos de build
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

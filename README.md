@@ -1,105 +1,154 @@
 # 📊 Dashboard de Analytics Empresarial
 
-Un dashboard profesional de analytics empresarial desarrollado con tecnologías modernas para demostrar habilidades en desarrollo full-stack.
+![Dashboard Preview](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![React](https://img.shields.io/badge/React-18.2.0-blue)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
 
-## 🚀 Características Principales
+## 🚀 **Demo en Vivo**
+**[Ver Dashboard Online](https://dashboard-analytics-nicoalvarez08.netlify.app/)**
 
-- **Dashboard Interactivo**: Gráficos y métricas en tiempo real
-- **Panel Administrativo**: Gestión completa de usuarios y configuraciones
-- **Métricas en Tiempo Real**: Actualizaciones automáticas con WebSockets
-- **Diseño Responsive**: Optimizado para desktop, tablet y móvil
-- **Autenticación Segura**: Sistema de login con JWT
-- **API RESTful**: Backend robusto con Node.js y Express
+## 📋 **Descripción**
 
-## 🛠️ Stack Tecnológico
+Dashboard profesional de analytics empresarial desarrollado con tecnologías modernas. Incluye métricas en tiempo real, gráficos interactivos, sistema de autenticación y panel administrativo completo.
 
-### Frontend
-- **React 18** - Biblioteca de UI moderna
-- **Chart.js & React-Chartjs-2** - Gráficos interactivos
-- **Styled Components** - Estilos componentizados
-- **React Router** - Navegación SPA
-- **Socket.io Client** - Comunicación en tiempo real
+## ✨ **Características Principales**
 
-### Backend
-- **Node.js & Express** - Servidor API REST
-- **MongoDB & Mongoose** - Base de datos NoSQL
-- **Socket.io** - WebSockets para tiempo real
-- **JWT** - Autenticación segura
-- **Helmet & CORS** - Seguridad
+- 📈 **Métricas en Tiempo Real** - Actualizaciones automáticas con WebSockets
+- 📊 **Gráficos Interactivos** - Chart.js y Recharts para visualizaciones avanzadas
+- 🔐 **Sistema de Autenticación** - JWT con roles de usuario
+- 📱 **Diseño Responsivo** - Optimizado para móviles y desktop
+- 🎨 **UI Moderna** - Styled Components con tema personalizable
+- 📤 **Exportación de Reportes** - PDF y Excel
+- 🔔 **Sistema de Notificaciones** - Alertas en tiempo real
+- 👥 **Panel Administrativo** - Gestión de usuarios y datos
 
-## 📦 Instalación
+## 🛠️ **Tecnologías Utilizadas**
 
-1. **Clonar el repositorio**
+### **Frontend**
+- **React 18** - Framework principal
+- **React Router** - Navegación
+- **Styled Components** - Estilos
+- **Chart.js & Recharts** - Gráficos
+- **Socket.io Client** - Tiempo real
+- **Axios** - HTTP Client
+
+### **Backend**
+- **Node.js & Express** - Servidor
+- **MongoDB & Mongoose** - Base de datos
+- **JWT** - Autenticación
+- **Socket.io** - WebSockets
+- **Bcrypt** - Encriptación
+
+## 🚀 **Instalación y Uso**
+
+### **Prerrequisitos**
+- Node.js 18+
+- MongoDB
+- npm o yarn
+
+### **Instalación**
 ```bash
-git clone <tu-repo>
+# Clonar el repositorio
+git clone https://github.com/nicoalvarez08/dashboard-analytics-empresarial.git
 cd dashboard-analytics-empresarial
-```
 
-2. **Instalar dependencias**
-```bash
+# Instalar dependencias
 npm run install-all
-```
 
-3. **Configurar variables de entorno**
-```bash
-# Crear archivo .env en la carpeta server
-MONGODB_URI=mongodb://localhost:27017/dashboard-analytics
-JWT_SECRET=tu-jwt-secret-super-seguro
-PORT=5000
-```
+# Configurar variables de entorno
+cp server/env.example server/.env
+# Editar server/.env con tus credenciales
 
-4. **Ejecutar en desarrollo**
-```bash
+# Ejecutar en desarrollo
 npm run dev
 ```
 
-## 🎯 Funcionalidades
+### **Credenciales de Demo**
+- **Admin:** `admin@dashboard.com` / `admin123`
+- **Usuario:** `user@dashboard.com` / `user123`
 
-### Dashboard Principal
-- 📈 Gráficos de ventas y métricas
-- 📊 Análisis de rendimiento
-- 🎯 KPIs en tiempo real
-- 📱 Diseño responsive
+## 📁 **Estructura del Proyecto**
 
-### Panel Administrativo
-- 👥 Gestión de usuarios
-- ⚙️ Configuración del sistema
-- 📋 Reportes detallados
-- 🔐 Control de acceso
-
-### Métricas en Tiempo Real
-- 📡 Actualizaciones automáticas
-- 🔔 Notificaciones push
-- 📊 Datos sincronizados
-- ⚡ Performance optimizada
-
-## 🚀 Deploy
-
-### Frontend (Netlify/Vercel)
-```bash
-cd client
-npm run build
-# Subir carpeta build
+```
+dashboard-analytics-empresarial/
+├── client/                 # Frontend React
+│   ├── src/
+│   │   ├── components/     # Componentes reutilizables
+│   │   ├── pages/         # Páginas principales
+│   │   ├── contexts/      # Context API
+│   │   ├── config/        # Configuración
+│   │   └── utils/         # Utilidades
+├── server/                # Backend Node.js
+│   ├── routes/           # Rutas de la API
+│   ├── models/           # Modelos de MongoDB
+│   └── scripts/          # Scripts de utilidad
+└── docs/                 # Documentación
 ```
 
-### Backend (Heroku/Railway)
-```bash
-cd server
-# Configurar variables de entorno en la plataforma
-```
+## 🌐 **Deploy**
 
-## 📱 Screenshots
+### **Netlify (Frontend)**
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/nicoalvarez08/dashboard-analytics-empresarial)
 
-*[Aquí irán las capturas de pantalla del dashboard]*
+### **Heroku (Backend)**
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nicoalvarez08/dashboard-analytics-empresarial)
 
-## 🤝 Contribución
+## 📊 **Capturas de Pantalla**
 
-Este es un proyecto de portfolio personal, pero las sugerencias son bienvenidas.
+### **Dashboard Principal**
+![Dashboard](https://via.placeholder.com/800x400/4f46e5/ffffff?text=Dashboard+Principal)
 
-## 📄 Licencia
+### **Gráficos Interactivos**
+![Charts](https://via.placeholder.com/800x400/059669/ffffff?text=Gráficos+Interactivos)
 
-MIT License - Ver archivo LICENSE para detalles.
+### **Panel Administrativo**
+![Admin Panel](https://via.placeholder.com/800x400/dc2626/ffffff?text=Panel+Administrativo)
+
+## 🔧 **API Endpoints**
+
+### **Autenticación**
+- `POST /api/auth/login` - Iniciar sesión
+- `POST /api/auth/register` - Registro
+- `GET /api/auth/me` - Perfil del usuario
+
+### **Dashboard**
+- `GET /api/dashboard/overview` - Resumen general
+- `GET /api/dashboard/charts/:metric` - Datos de gráficos
+- `GET /api/dashboard/realtime` - Métricas en tiempo real
+
+### **Usuarios**
+- `GET /api/users` - Lista de usuarios
+- `POST /api/users` - Crear usuario
+- `PUT /api/users/:id` - Actualizar usuario
+
+## 🤝 **Contribuciones**
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 **Licencia**
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+
+## 👨‍💻 **Autor**
+
+**Nico Alvarez**
+- GitHub: [@nicoalvarez08](https://github.com/nicoalvarez08)
+- LinkedIn: [Nico Alvarez](https://linkedin.com/in/nicoalvarez08)
+
+## 🙏 **Agradecimientos**
+
+- React Team por el framework
+- Chart.js por las librerías de gráficos
+- MongoDB por la base de datos
+- Netlify y Heroku por el hosting
 
 ---
 
-**Desarrollado con ❤️ para impresionar a empresas como Globant y MercadoLibre**
+⭐ **¡Dale una estrella si te gusta el proyecto!** ⭐
