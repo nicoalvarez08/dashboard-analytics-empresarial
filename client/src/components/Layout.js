@@ -14,7 +14,7 @@ const MainContent = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: ${props => props.sidebarOpen ? '280px' : '80px'};
+  margin-left: ${props => props.$sidebarOpen ? '280px' : '80px'};
   transition: margin-left ${props => props.theme.transitions.normal};
 
   @media (max-width: 768px) {
@@ -42,7 +42,7 @@ const Layout = () => {
   return (
     <LayoutContainer>
       <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
-      <MainContent sidebarOpen={sidebarOpen}>
+      <MainContent $sidebarOpen={sidebarOpen}>
         <Header onMenuClick={toggleSidebar} />
         <ContentArea>
           <Outlet />
