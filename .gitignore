@@ -100,7 +100,7 @@ ehthumbs.db
 Thumbs.db
 
 # MongoDB data
-data/
+# data/ (comentado para permitir src/data/)
 
 # Uploads
 uploads/
