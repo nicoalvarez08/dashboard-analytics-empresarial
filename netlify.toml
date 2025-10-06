@@ -1,8 +1,8 @@
 [build]
   # Directorio donde está el cliente React
   base = "client"
-  publish = "client/build"
-  command = "npm run build"
+  publish = "build"
+  command = "npm ci && npm run build"
 
 [build.environment]
   # Variables de entorno para producción
@@ -10,6 +10,7 @@
   REACT_APP_API_URL = "https://dashboard-analytics-backend.herokuapp.com/api"
   REACT_APP_SOCKET_URL = "https://dashboard-analytics-backend.herokuapp.com"
   GENERATE_SOURCEMAP = "false"
+  CI = "false"
 
 # Configuración de redirecciones para SPA
 [[redirects]]
