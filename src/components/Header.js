@@ -188,6 +188,12 @@ const UserRole = styled.span`
   color: ${props => props.theme.colors.textMuted};
 `;
 
+const UserDepartment = styled.span`
+  font-size: 0.7rem;
+  color: ${props => props.theme.colors.primary};
+  font-weight: 500;
+`;
+
 const DropdownMenu = styled.div`
   position: absolute;
   top: 100%;
@@ -292,6 +298,7 @@ const Header = ({ onMenuClick }) => {
             <UserInfo>
               <UserName>{user?.name}</UserName>
               <UserRole>{user?.role}</UserRole>
+              <UserDepartment>{user?.department}</UserDepartment>
             </UserInfo>
           </UserButton>
 

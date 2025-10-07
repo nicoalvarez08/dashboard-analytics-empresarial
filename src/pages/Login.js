@@ -134,6 +134,16 @@ const DemoTitle = styled.h3`
   margin-bottom: 0.75rem;
 `;
 
+const DemoInfo = styled.p`
+  font-size: 0.75rem;
+  color: ${props => props.theme.colors.textMuted};
+  margin-bottom: 1rem;
+  text-align: center;
+  background: ${props => props.theme.colors.surfaceHover};
+  padding: 0.5rem;
+  border-radius: ${props => props.theme.borderRadius.md};
+`;
+
 const DemoItem = styled.div`
   display: flex;
   justify-content: space-between;
@@ -273,6 +283,9 @@ const Login = () => {
 
         <DemoCredentials>
           <DemoTitle>Credenciales de Demo</DemoTitle>
+          <DemoInfo>
+            💡 Puedes usar cualquier email y contraseña para acceder como Usuario
+          </DemoInfo>
           <DemoItem>
             <span>👨‍💼 Administrador</span>
             <DemoButton onClick={() => fillDemoCredentials('admin@dashboard.com', 'admin123')}>

@@ -143,9 +143,11 @@ export const AuthProvider = ({ children }) => {
       if (email === 'admin@dashboard.com' && password === 'admin123') {
         const user = {
           id: '1',
-          name: 'Administrador',
+          name: 'Nicolás Álvarez',
           email: 'admin@dashboard.com',
-          role: 'admin',
+          role: 'Administrador',
+          department: 'IT',
+          permissions: ['view', 'edit', 'delete', 'admin'],
           preferences: { theme: 'light', language: 'es', notifications: true }
         };
         const token = 'demo-token-admin';
@@ -162,9 +164,11 @@ export const AuthProvider = ({ children }) => {
       } else if (email === 'user@dashboard.com' && password === 'user123') {
         const user = {
           id: '2',
-          name: 'Usuario de Prueba',
+          name: 'Usuario Demo',
           email: 'user@dashboard.com',
-          role: 'user',
+          role: 'Usuario',
+          department: 'Analytics',
+          permissions: ['view'],
           preferences: { theme: 'light', language: 'es', notifications: true }
         };
         const token = 'demo-token-user';
@@ -180,12 +184,27 @@ export const AuthProvider = ({ children }) => {
         return { success: true };
       }
       
-      const errorMessage = error.response?.data?.error || 'Credenciales inválidas';
+      // Credenciales por defecto para demo (cualquier otro email/password)
+      const user = {
+        id: '3',
+        name: 'Usuario Visitante',
+        email: email,
+        role: 'Usuario',
+        department: 'Analytics',
+        permissions: ['view'],
+        preferences: { theme: 'light', language: 'es', notifications: true }
+      };
+      const token = 'demo-token-visitor';
+      
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      
       dispatch({
-        type: 'LOGIN_FAILURE',
-        payload: errorMessage
+        type: 'LOGIN_SUCCESS',
+        payload: { user, token }
       });
-      return { success: false, error: errorMessage };
+      
+      return { success: true };
     }
   };
 
