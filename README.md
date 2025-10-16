@@ -65,8 +65,9 @@ npm run dev
 ```
 
 ### **Credenciales de Demo**
-- **Admin:** `admin@dashboard.com` / `admin123`
+- **Administrador:** `admin@dashboard.com` / `admin123`
 - **Usuario:** `user@dashboard.com` / `user123`
+- **Visitantes:** Cualquier email/contraseña (acceso como Usuario)
 
 ## 📁 **Estructura del Proyecto**
 
