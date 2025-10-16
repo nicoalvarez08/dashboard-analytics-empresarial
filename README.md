@@ -95,16 +95,9 @@ dashboard-analytics-empresarial/
 ### **Heroku (Backend)**
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nicoalvarez08/dashboard-analytics-empresarial)
 
-## 📊 **Capturas de Pantalla**
+## 📊 **Características del Sistema**
 
-### **Dashboard Principal**
-![Dashboard](https://via.placeholder.com/800x400/4f46e5/ffffff?text=Dashboard+Principal)
-
-### **Gráficos Interactivos**
-![Charts](https://via.placeholder.com/800x400/059669/ffffff?text=Gráficos+Interactivos)
-
-### **Panel Administrativo**
-![Admin Panel](https://via.placeholder.com/800x400/dc2626/ffffff?text=Panel+Administrativo)
+El dashboard incluye visualizaciones avanzadas, métricas en tiempo real y un panel administrativo completo para la gestión de usuarios y datos. Todas las funcionalidades están optimizadas para proporcionar una experiencia de usuario fluida tanto en dispositivos móviles como en desktop.
 
 ## 🔧 **API Endpoints**
 
